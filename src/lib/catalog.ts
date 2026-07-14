@@ -1,0 +1,61 @@
+export const OCCASIONS = [
+  "Amour",
+  "Anniversaire",
+  "Mariage",
+  "Naissance",
+  "Maman",
+  "Papa",
+  "Enfant",
+  "Entreprise",
+  "Église",
+  "Diplôme",
+  "Deuil",
+  "Amitié",
+  "Saint-Valentin",
+  "Nouvel An",
+  "Noël",
+  "Réconciliation",
+  "Demande en mariage",
+  "Jingle Publicitaire",
+  "Jingle Radio",
+  "Hymne d'entreprise",
+] as const;
+
+export const STYLES = [
+  "Rumba",
+  "Ndombolo",
+  "Afrobeat",
+  "Gospel",
+  "Rap",
+  "Trap",
+  "Hip-Hop",
+  "R&B",
+  "Pop",
+  "Amapiano",
+  "Makossa",
+  "Soukous",
+  "Acoustique",
+  "Piano",
+  "Jazz",
+] as const;
+
+export const LANGUAGES = [
+  "Français",
+  "Lingala",
+  "Kituba",
+  "Anglais",
+  "Mixte",
+] as const;
+
+export const EMOTIONS = [
+  "Amour",
+  "Joie",
+  "Nostalgie",
+  "Fierté",
+  "Gratitude",
+  "Tendresse",
+  "Énergie",
+  "Espoir",
+  "Paix",
+  "Foi",
+] as const;

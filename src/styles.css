@@ -1,0 +1,99 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-base: var(--base);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Mélodia brand tokens */
+  --base: oklch(0.145 0.005 285);
+  --surface: oklch(0.21 0.006 285);
+  --accent: oklch(0.83 0.16 82);
+  --accent-dark: oklch(0.55 0.14 55);
+  --accent-foreground: oklch(0.145 0.005 285);
+
+  --background: var(--base);
+  --foreground: oklch(0.985 0.002 285);
+  --card: var(--surface);
+  --card-foreground: oklch(0.985 0.002 285);
+  --popover: var(--surface);
+  --popover-foreground: oklch(0.985 0.002 285);
+  --primary: var(--accent);
+  --primary-foreground: oklch(0.145 0.005 285);
+  --secondary: oklch(0.27 0.006 285);
+  --secondary-foreground: oklch(0.985 0.002 285);
+  --muted: oklch(0.27 0.006 285);
+  --muted-foreground: oklch(0.65 0.01 285);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.985 0.002 285);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: var(--accent);
+}
+
+.dark {
+  --background: var(--base);
+  --foreground: oklch(0.985 0.002 285);
+}
+
+@keyframes wave-pulse {
+  0%, 100% { height: 40%; }
+  50% { height: 90%; }
+}
+
+@utility waveform-bar {
+  animation: wave-pulse 1.2s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    background-color: var(--color-base);
+  }
+  body {
+    background-color: var(--color-base);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-accent) 30%, transparent);
+  }
+}
